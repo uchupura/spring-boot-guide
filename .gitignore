@@ -1,0 +1,6 @@
+# Project exclude paths
+/.gradle/
+/application/spring-boot-common-super-application/build/
+/application/spring-boot-common-super-application/build/classes/java/main/
+/common/system-core/build/
+/common/system-core/build/classes/java/main/
