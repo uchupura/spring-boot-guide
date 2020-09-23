@@ -1,8 +1,11 @@
-package com.platform.common.app.controller;
+package com.platform.pageable.controller;
 
-import com.platform.common.app.dto.Result;
-import com.platform.common.app.service.BaseService;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.platform.pageable.dto.Result;
+import com.platform.pageable.resolver.PostPageable;
+import com.platform.pageable.service.BaseService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +19,9 @@ public abstract class BaseController<T, ID extends Serializable> {
     protected String baseUri;
     protected BaseService service;
 
+    @Autowired
+    ObjectMapper mapper;
+
     protected BaseController(String baseUri, BaseService service) {
         this.baseUri = baseUri;
         this.service = service;
@@ -26,8 +32,8 @@ public abstract class BaseController<T, ID extends Serializable> {
         List list = service.readAll();
         return new Result(list.size(), list);
     }
-    @GetMapping("pageable")
-    public Page<T> readPage(Pageable pageable) {
+    @PostMapping("pageable")
+    public Page<T> readPage(@PostPageable  Pageable pageable) {
         return service.search(pageable);
     }
 
