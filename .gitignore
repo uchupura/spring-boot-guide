@@ -1,4 +1,5 @@
 # Project exclude paths
+/.idea/
 /.gradle/
 /application/spring-boot-common-super-application/build/
 /application/spring-boot-common-super-application/build/classes/java/main/
