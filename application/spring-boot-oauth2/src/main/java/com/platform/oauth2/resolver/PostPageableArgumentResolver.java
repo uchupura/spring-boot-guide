@@ -1,4 +1,4 @@
-package com.platform.pageable.resolver;
+package com.platform.oauth2.resolver;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;

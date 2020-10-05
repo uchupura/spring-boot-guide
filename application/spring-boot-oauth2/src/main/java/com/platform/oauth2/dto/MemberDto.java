@@ -1,4 +1,4 @@
-package com.platform.pageable.dto;
+package com.platform.oauth2.dto;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 public class MemberDto {
 
     Long id;
+    String password;
     String name;
     String phone;
     LocalDateTime createdDate;

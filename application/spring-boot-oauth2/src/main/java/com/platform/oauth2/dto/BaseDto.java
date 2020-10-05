@@ -1,4 +1,4 @@
-package com.platform.pageable.dto;
+package com.platform.oauth2.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

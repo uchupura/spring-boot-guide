@@ -1,10 +1,10 @@
-package com.platform.pageable.controller;
+package com.platform.oauth2.controller;
 
-import com.platform.pageable.dto.Filter;
-import com.platform.pageable.dto.MemberDto;
-import com.platform.pageable.resolver.PostPageable;
-import com.platform.pageable.resolver.RequestBodyWithPageable;
-import com.platform.pageable.service.MemberService;
+import com.platform.oauth2.dto.Filter;
+import com.platform.oauth2.dto.MemberDto;
+import com.platform.oauth2.resolver.PostPageable;
+import com.platform.oauth2.resolver.RequestBodyWithPageable;
+import com.platform.oauth2.service.MemberService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
