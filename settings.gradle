@@ -3,5 +3,6 @@ rootProject.name = 'spring-boot-guides'
 include 'application:spring-boot-common-super-application'
 include 'application:spring-boot-pageable'
 include 'application:spring-boot-oauth2'
+include 'application:spring-boot-redis'
 
 include 'common:system-core'
