@@ -1,4 +1,4 @@
-package com.platform.oauth2.exception;
+package com.platform.oauth2.config.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

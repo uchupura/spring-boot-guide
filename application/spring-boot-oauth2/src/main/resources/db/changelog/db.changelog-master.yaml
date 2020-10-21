@@ -109,6 +109,46 @@ databaseChangeLog:
             - column:
                 name: last_modified_date
                 type: timestamp
+      - createTable:
+          tableName: user
+          columns:
+            - column:
+                name: id
+                type: bigint(20)
+                autoIncrement: true
+                constraints:
+                  primaryKey: true
+                  nullable: false
+            - column:
+                name: login_id
+                type: varchar(256)
+            - column:
+                name: password
+                type: varchar(256)
+            - column:
+                name: name
+                type: varchar(256)
+            - column:
+                name: phone
+                type: varchar(256)
+            - column:
+                name: email
+                type: varchar(256)
+            - column:
+                name: role
+                type: varchar(256)
+            - column:
+                name: created_by
+                type: bigint(20)
+            - column:
+                name: last_modified_by
+                type: bigint(20)
+            - column:
+                name: created_date
+                type: timestamp
+            - column:
+                name: last_modified_date
+                type: timestamp
 
 # just for testing, it's not a good practice
 - changeSet:
@@ -142,7 +182,7 @@ databaseChangeLog:
                     value: "user1@pm.com"
             - column:
                     name: password
-                    value: "user123"
+                    value: "{bcrypt}$2a$10$C8YkyybId60aTmrbOxjFJu3YHYdA3GAkyqRpJUF23SSrrcV7thynG"
             - column:
                     name: phone
                     value: "ROLE_USER"
@@ -152,6 +192,74 @@ databaseChangeLog:
             - column:
                     name: last_modified_date
                     value: "now()"
+
+      - insert:
+          tableName: user
+          columns:
+            - column:
+                name: login_id
+                value: "admin"
+            - column:
+                name: password
+                value: "{bcrypt}$2a$10$FxPmYP.nyv119bFa8PNlmOSkK6wb8m3a6ru42oewaZ4HZsamleFW6"
+            - column:
+                name: name
+                value: "관리자"
+            - column:
+                name: phone
+                value: "01011111111"
+            - column:
+                name: email
+                value: "admin@pm.com"
+            - column:
+                name: role
+                value: "ADMIN"
+            - column:
+                name: created_by
+                value: "1"
+            - column:
+                name: last_modified_by
+                value: "1"
+            - column:
+                name: created_date
+                value: "now()"
+            - column:
+                name: last_modified_date
+                value: "now()"
+
+      - insert:
+          tableName: user
+          columns:
+            - column:
+                name: login_id
+                value: "user"
+            - column:
+                name: password
+                value: "{bcrypt}$2a$10$JgyX8yzmhWCX0YTJJdRR5eX1b8ZsZE40pzE00gLyhcejosjY0ML6y"
+            - column:
+                name: name
+                value: "유저"
+            - column:
+                name: phone
+                value: "01022222222"
+            - column:
+                name: email
+                value: "user@pm.com"
+            - column:
+                name: role
+                value: "USER"
+            - column:
+                name: created_by
+                value: "1"
+            - column:
+                name: last_modified_by
+                value: "1"
+            - column:
+                name: created_date
+                value: "now()"
+            - column:
+                name: last_modified_date
+                value: "now()"
 
       - insert:
           tableName: oauth_client_details

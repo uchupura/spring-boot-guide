@@ -2,8 +2,12 @@ package com.platform.oauth2.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.platform.oauth2.entity.user.UserRole;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 @NoArgsConstructor
 @Data
@@ -11,5 +15,6 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Filter {
 
-    private String name;
+    @Enumerated(EnumType.STRING)
+    private UserRole role;
 }

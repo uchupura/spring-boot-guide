@@ -1,14 +1,13 @@
 package com.platform.oauth2.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.platform.oauth2.config.resolver.PostPageable;
 import com.platform.oauth2.dto.BaseDto;
-import com.platform.oauth2.resolver.PostPageable;
 import com.platform.oauth2.service.BaseService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.Serializable;
@@ -28,8 +27,8 @@ public abstract class BaseController<T, ID extends Serializable> {
         this.service = service;
     }
 
+    //@Secured({"ROLE_ADMIN"})
     @GetMapping
-    @Secured({"ROLE_ADMIN"})
     public BaseDto readAll() {
         List list = service.readAll();
         return new BaseDto(list.size(), list);

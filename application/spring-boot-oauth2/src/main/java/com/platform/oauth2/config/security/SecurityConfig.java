@@ -1,8 +1,6 @@
-package com.platform.oauth2.config;
+package com.platform.oauth2.config.security;
 
-import com.platform.oauth2.repository.MemberRepository;
-import com.platform.oauth2.service.DefaultUserDetailsService;
-import com.platform.oauth2.service.MemberService;
+import com.platform.oauth2.service.UserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,7 +18,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private MemberRepository memberRepository;
+    private UserDetailsService userDetailsService;
 
     @Override
     @Bean
@@ -31,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public void globalUserDetails(AuthenticationManagerBuilder auth) throws Exception {
         auth
-            .userDetailsService(new DefaultUserDetailsService(memberRepository))
+            .userDetailsService(userDetailsService)
             .passwordEncoder(encoder());
     }
 

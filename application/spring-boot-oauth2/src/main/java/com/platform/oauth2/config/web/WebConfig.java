@@ -1,7 +1,7 @@
-package com.platform.oauth2.config;
+package com.platform.oauth2.config.web;
 
-import com.platform.oauth2.resolver.PostPageableArgumentResolver;
-import com.platform.oauth2.resolver.RequestBodyWithPageableArgumentResolver;
+import com.platform.oauth2.config.resolver.PostPageableArgumentResolver;
+import com.platform.oauth2.config.resolver.RequestBodyWithPageableArgumentResolver;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;

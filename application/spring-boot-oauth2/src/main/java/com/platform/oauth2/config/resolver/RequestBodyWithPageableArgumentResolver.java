@@ -1,4 +1,4 @@
-package com.platform.oauth2.resolver;
+package com.platform.oauth2.config.resolver;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.io.CharStreams;
