@@ -4,5 +4,6 @@ include 'application:spring-boot-common-super-application'
 include 'application:spring-boot-pageable'
 include 'application:spring-boot-oauth2'
 include 'application:spring-boot-redis'
+include 'application:spring-boot-websocket'
 
 include 'common:system-core'
